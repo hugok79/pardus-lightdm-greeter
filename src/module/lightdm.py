@@ -107,6 +107,10 @@ class lightdm_class:
             debug("Auth user changed: {} -> {}".format(self.greeter.get_authentication_user(), self.__username))
             self.greeter.cancel_authentication()
         elif self.greeter.get_in_authentication():
+            if not get("reset-helper", True, "lightdm"):
+                self.greeter.respond(self.__password)
+                return
+
             if not self.__is_reset and self.__last_prompt is not None:
                 self.greeter.respond(self.__password)
                 return
@@ -123,6 +127,14 @@ class lightdm_class:
         self.__last_prompt = text.strip()
         debug("Prompt: {} ({})".format(text.strip(), self.__is_reset))
         self.write_values("Show Prompt:")
+        if not get("reset-helper", True, "lightdm"):
+            if text.strip() in self.__prompt_messages:
+                if self.__password is None:
+                    return
+                self.greeter.respond(self.__password)
+            else:
+                self.__show_message(greeter, text)
+            return
         if self.__is_reset:
             # create response variable
             response = None

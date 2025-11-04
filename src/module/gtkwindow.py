@@ -163,6 +163,7 @@ class LoginWindow:
         self.o("ui_label_reset_password_error").set_text(message)
         self.o("ui_entry_new_password1").set_text("")
         self.o("ui_entry_new_password2").set_text("")
+        self.o("ui_entry_password").set_text("")
         self.o("ui_stack_login").set_visible_child_name("page_main")
 
     def login_handler(self):

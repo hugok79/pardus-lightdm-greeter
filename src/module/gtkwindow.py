@@ -156,6 +156,20 @@ class LoginWindow:
         if get("authenticate-on-start", True, "gtkwindow"):
             lightdm.greeter.authenticate(username)
 
+    def create_notify(self, message):
+        but = Gtk.Button()
+        box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
+        l_msg = Gtk.Label(message)
+        def do_click(widget):
+           widget.hide()
+           self.o("ui_box_notify").remove(widget)
+        box.pack_start(l_msg, False, False, 0)
+        but.connect("clicked", do_click)
+        but.add(box)
+        but.get_style_context().add_class("notify")
+        but.set_can_focus(False)
+        return but
+
     def msg_handler(self, message=""):
         log(message)
         self.unblock_gui()
@@ -164,7 +178,9 @@ class LoginWindow:
         self.o("ui_entry_new_password1").set_text("")
         self.o("ui_entry_new_password2").set_text("")
         self.o("ui_entry_password").set_text("")
+        self.o("ui_box_notify").pack_start(self.create_notify(message), False, False, 3)
         self.o("ui_stack_login").set_visible_child_name("page_main")
+        self.o("ui_box_notify").show_all()
 
     def login_handler(self):
         if get("password-cache", True, "gtkwindow"):

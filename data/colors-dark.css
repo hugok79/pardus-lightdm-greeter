@@ -34,7 +34,6 @@ menu {
   border: none;
 }
 
-.notify,
 .textview {
   background: alpha(black,0.55);
 }

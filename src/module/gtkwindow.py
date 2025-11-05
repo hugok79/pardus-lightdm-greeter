@@ -166,19 +166,24 @@ class LoginWindow:
         box.pack_start(l_msg, False, False, 0)
         but.connect("clicked", do_click)
         but.add(box)
-        but.get_style_context().add_class("notify")
+        l_msg.get_style_context().add_class("text")
+        l_msg.set_halign(Gtk.Align.END)
+        but.get_style_context().add_class("icon")
+        but.set_relief(Gtk.ReliefStyle.NONE)
         but.set_can_focus(False)
+        GLib.timeout_add(10000, do_click, but)
         return but
 
     def msg_handler(self, message=""):
         log(message)
         self.unblock_gui()
+        self.ignore_password_cache = True
         self.o("ui_label_login_error").set_text(message)
         self.o("ui_label_reset_password_error").set_text(message)
         self.o("ui_entry_new_password1").set_text("")
         self.o("ui_entry_new_password2").set_text("")
         self.o("ui_entry_password").set_text("")
-        self.o("ui_box_notify").pack_start(self.create_notify(message), False, False, 3)
+        self.o("ui_box_notify").pack_start(self.create_notify(message), False, False, 0)
         self.o("ui_stack_login").set_visible_child_name("page_main")
         self.o("ui_box_notify").show_all()
 

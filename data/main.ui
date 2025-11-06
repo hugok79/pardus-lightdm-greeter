@@ -171,24 +171,49 @@
                           </packing>
                         </child>
                         <child>
-                          <object class="GtkStack" id="ui_stack_login">
+                          <object class="GtkLabel">
+                            <property name="height-request">31</property>
                             <property name="visible">True</property>
                             <property name="can-focus">False</property>
-                            <property name="margin-top">21</property>
+                          </object>
+                          <packing>
+                            <property name="expand">False</property>
+                            <property name="fill">True</property>
+                            <property name="position">3</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkStack" id="ui_stack_login">
+                            <property name="width-request">250</property>
+                            <property name="visible">True</property>
+                            <property name="can-focus">False</property>
+                            <property name="halign">center</property>
+                            <property name="valign">center</property>
+                            <property name="hhomogeneous">False</property>
+                            <property name="vhomogeneous">False</property>
                             <property name="transition-duration">500</property>
                             <property name="transition-type">slide-left-right</property>
                             <child>
                               <object class="GtkBox" id="ui_box_login">
-                                <property name="width-request">250</property>
                                 <property name="visible">True</property>
                                 <property name="can-focus">False</property>
-                                <property name="halign">center</property>
                                 <property name="orientation">vertical</property>
                                 <property name="spacing">5</property>
                                 <child>
                                   <object class="GtkBox" id="ui_box_username">
                                     <property name="visible">True</property>
                                     <property name="can-focus">False</property>
+                                    <child>
+                                      <object class="GtkLabel">
+                                        <property name="visible">True</property>
+                                        <property name="can-focus">False</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">True</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">0</property>
+                                      </packing>
+                                    </child>
                                     <child>
                                       <object class="GtkStack" id="ui_stack_username">
                                         <property name="visible">True</property>
@@ -239,7 +264,7 @@
                                       <packing>
                                         <property name="expand">True</property>
                                         <property name="fill">True</property>
-                                        <property name="position">0</property>
+                                        <property name="position">1</property>
                                       </packing>
                                     </child>
                                     <child>
@@ -264,7 +289,18 @@
                                       <packing>
                                         <property name="expand">False</property>
                                         <property name="fill">True</property>
-                                        <property name="position">1</property>
+                                        <property name="position">2</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkLabel">
+                                        <property name="visible">True</property>
+                                        <property name="can-focus">False</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">True</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">3</property>
                                       </packing>
                                     </child>
                                   </object>
@@ -278,6 +314,17 @@
                                   <object class="GtkBox" id="ui_box_password">
                                     <property name="visible">True</property>
                                     <property name="can-focus">False</property>
+                                    <child>
+                                      <object class="GtkLabel">
+                                        <property name="visible">True</property>
+                                        <property name="can-focus">False</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">True</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">0</property>
+                                      </packing>
+                                    </child>
                                     <child>
                                       <object class="GtkEntry" id="ui_entry_password">
                                         <property name="width-request">31</property>
@@ -299,7 +346,7 @@
                                       <packing>
                                         <property name="expand">True</property>
                                         <property name="fill">True</property>
-                                        <property name="position">0</property>
+                                        <property name="position">1</property>
                                       </packing>
                                     </child>
                                     <child>
@@ -324,7 +371,18 @@
                                       <packing>
                                         <property name="expand">False</property>
                                         <property name="fill">True</property>
-                                        <property name="position">1</property>
+                                        <property name="position">2</property>
+                                      </packing>
+                                    </child>
+                                    <child>
+                                      <object class="GtkLabel">
+                                        <property name="visible">True</property>
+                                        <property name="can-focus">False</property>
+                                      </object>
+                                      <packing>
+                                        <property name="expand">True</property>
+                                        <property name="fill">True</property>
+                                        <property name="position">3</property>
                                       </packing>
                                     </child>
                                   </object>
@@ -336,18 +394,19 @@
                                 </child>
                                 <child>
                                   <object class="GtkBox">
+                                    <property name="width-request">250</property>
                                     <property name="visible">True</property>
                                     <property name="can-focus">False</property>
+                                    <property name="halign">center</property>
                                     <child>
                                       <object class="GtkLabel">
-                                        <property name="width-request">22</property>
+                                        <property name="width-request">31</property>
                                         <property name="visible">True</property>
                                         <property name="can-focus">False</property>
-                                        <property name="margin-left">8</property>
                                         <property name="margin-start">8</property>
                                       </object>
                                       <packing>
-                                        <property name="expand">False</property>
+                                        <property name="expand">True</property>
                                         <property name="fill">True</property>
                                         <property name="position">0</property>
                                       </packing>
@@ -361,8 +420,6 @@
                                         <property name="receives-default">True</property>
                                         <property name="halign">center</property>
                                         <property name="valign">center</property>
-                                        <property name="margin-left">20</property>
-                                        <property name="margin-right">20</property>
                                         <property name="margin-start">20</property>
                                         <property name="margin-end">20</property>
                                         <style>
@@ -377,14 +434,14 @@
                                     </child>
                                     <child>
                                       <object class="GtkSpinner" id="ui_spinner_login">
-                                        <property name="width-request">22</property>
+                                        <property name="width-request">31</property>
                                         <property name="visible">True</property>
                                         <property name="can-focus">False</property>
-                                        <property name="margin-right">8</property>
+                                        <property name="halign">end</property>
                                         <property name="margin-end">8</property>
                                       </object>
                                       <packing>
-                                        <property name="expand">False</property>
+                                        <property name="expand">True</property>
                                         <property name="fill">True</property>
                                         <property name="position">3</property>
                                       </packing>
@@ -397,14 +454,31 @@
                                   </packing>
                                 </child>
                                 <child>
-                                  <object class="GtkLabel" id="ui_label_login_error">
+                                  <object class="GtkScrolledWindow">
+                                    <property name="width-request">350</property>
+                                    <property name="height-request">100</property>
                                     <property name="visible">True</property>
-                                    <property name="can-focus">False</property>
-                                    <property name="valign">start</property>
-                                    <property name="label">error message</property>
-                                    <style>
-                                      <class name="text"/>
-                                    </style>
+                                    <property name="can-focus">True</property>
+                                    <property name="hscrollbar-policy">never</property>
+                                    <child>
+                                      <object class="GtkViewport">
+                                        <property name="visible">True</property>
+                                        <property name="can-focus">False</property>
+                                        <property name="shadow-type">none</property>
+                                        <child>
+                                          <object class="GtkLabel" id="ui_label_login_error">
+                                            <property name="visible">True</property>
+                                            <property name="can-focus">False</property>
+                                            <property name="valign">start</property>
+                                            <property name="label">error message</property>
+                                            <property name="wrap">True</property>
+                                            <style>
+                                              <class name="text"/>
+                                            </style>
+                                          </object>
+                                        </child>
+                                      </object>
+                                    </child>
                                   </object>
                                   <packing>
                                     <property name="expand">False</property>
@@ -420,7 +494,6 @@
                             </child>
                             <child>
                               <object class="GtkBox" id="ui_box_reset_passwd">
-                                <property name="width-request">250</property>
                                 <property name="visible">True</property>
                                 <property name="can-focus">False</property>
                                 <property name="halign">center</property>
@@ -892,9 +965,9 @@ and power off the computer ?</property>
                             </child>
                           </object>
                           <packing>
-                            <property name="expand">False</property>
+                            <property name="expand">True</property>
                             <property name="fill">True</property>
-                            <property name="position">3</property>
+                            <property name="position">4</property>
                           </packing>
                         </child>
                       </object>

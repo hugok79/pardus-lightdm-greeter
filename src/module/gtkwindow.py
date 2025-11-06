@@ -186,6 +186,7 @@ class LoginWindow:
         self.notifies.append(notify_widget)
         self.o("ui_button_notify").show()
         self.o("ui_box_notify").pack_start(notify_widget, False, False, 3)
+        self.o("ui_box_notify").reorder_child(notify_widget, 0)
         self.o("ui_stack_login").set_visible_child_name("page_main")
         self.o("ui_box_notify").show_all()
 

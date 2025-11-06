@@ -42,3 +42,7 @@ menu {
 .wrongpass {
     border: 1px solid red;
 }
+
+.red {
+    color: #A00000;
+}

@@ -1,3 +1,4 @@
+import time
 import hashlib
 import subprocess
 
@@ -28,6 +29,7 @@ class LoginWindow:
         self.background_pixbuf = None
         self.ignore_password_cache = False
         self.background_handler = None
+        self.notifies = []
 
     def __connect_signals(self):
         def block_delete(*args):
@@ -90,6 +92,7 @@ class LoginWindow:
         # Clear error messages
         self.o("ui_label_login_error").set_text("")
         self.o("ui_label_reset_password_error").set_text("")
+        self.o("ui_button_notify").hide()
         # Disable suspend options if oem stuff detected.
         if os.path.exists("/sys/firmware/acpi/tables/MSDM"):
             self.o("ui_button_sleep").hide()
@@ -157,22 +160,17 @@ class LoginWindow:
             lightdm.greeter.authenticate(username)
 
     def create_notify(self, message):
-        but = Gtk.Button()
         box = Gtk.Box(orientation=Gtk.Orientation.VERTICAL)
-        l_msg = Gtk.Label(message)
-        def do_click(widget):
-           widget.hide()
-           self.o("ui_box_notify").remove(widget)
-        box.pack_start(l_msg, False, False, 0)
-        but.connect("clicked", do_click)
-        but.add(box)
+        l_date = Gtk.Label(label=time.strftime("%H:%M:%S"))
+        l_msg = Gtk.Label(label=message)
+        box.pack_start(l_date, False, False, 0)
+        box.pack_start(l_msg, True, True, 0)
         l_msg.get_style_context().add_class("text")
-        l_msg.set_halign(Gtk.Align.END)
-        but.get_style_context().add_class("icon")
-        but.set_relief(Gtk.ReliefStyle.NONE)
-        but.set_can_focus(False)
-        GLib.timeout_add(10000, do_click, but)
-        return but
+        l_date.get_style_context().add_class("text")
+        l_date.get_style_context().add_class("red")
+        l_date.set_halign(Gtk.Align.START)
+        l_msg.set_halign(Gtk.Align.START)
+        return box
 
     def msg_handler(self, message=""):
         log(message)
@@ -184,7 +182,10 @@ class LoginWindow:
         self.o("ui_entry_new_password1").set_text("")
         self.o("ui_entry_new_password2").set_text("")
         self.o("ui_entry_password").set_text("")
-        self.o("ui_box_notify").pack_start(self.create_notify(message), False, False, 0)
+        notify_widget = self.create_notify(message)
+        self.notifies.append(notify_widget)
+        self.o("ui_button_notify").show()
+        self.o("ui_box_notify").pack_start(notify_widget, False, False, 3)
         self.o("ui_stack_login").set_visible_child_name("page_main")
         self.o("ui_box_notify").show_all()
 
@@ -422,6 +423,8 @@ class LoginWindow:
         # login box width
         self.o("ui_box_reset_passwd").set_size_request(250*scale, -1)
         self.o("ui_box_login").set_size_request(250*scale, -1)
+        # notify panel
+        self.o("ui_scrolled_notify").set_size_request(-1, self.height/2)
         # login button & entry 128 x 31
         for but in ["ui_button_login", "ui_box_username", "ui_entry_reset_username", "ui_entry_password",
                     "ui_box_password",

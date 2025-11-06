@@ -989,7 +989,6 @@ and power off the computer ?</property>
                     <property name="can-focus">False</property>
                     <property name="margin-top">5</property>
                     <property name="margin-bottom">5</property>
-                    <property name="homogeneous">True</property>
                     <child>
                       <object class="GtkBox" id="ui_box_bottom_left">
                         <property name="visible">True</property>
@@ -1076,6 +1075,40 @@ and power off the computer ?</property>
                             <property name="expand">False</property>
                             <property name="fill">True</property>
                             <property name="position">1</property>
+                          </packing>
+                        </child>
+                        <child>
+                          <object class="GtkButton" id="ui_button_notify">
+                            <property name="visible">True</property>
+                            <property name="can-focus">True</property>
+                            <property name="receives-default">True</property>
+                            <property name="halign">center</property>
+                            <property name="valign">center</property>
+                            <property name="relief">none</property>
+                            <property name="image-position">top</property>
+                            <property name="always-show-image">True</property>
+                            <child>
+                              <object class="GtkImage" id="ui_icon_notify">
+                                <property name="visible">True</property>
+                                <property name="can-focus">False</property>
+                                <property name="halign">center</property>
+                                <property name="valign">center</property>
+                                <property name="pixel-size">36</property>
+                                <property name="icon-name">notification-symbolic</property>
+                                <property name="icon_size">5</property>
+                                <style>
+                                  <class name="text"/>
+                                </style>
+                              </object>
+                            </child>
+                            <style>
+                              <class name="icon"/>
+                            </style>
+                          </object>
+                          <packing>
+                            <property name="expand">False</property>
+                            <property name="fill">True</property>
+                            <property name="position">2</property>
                           </packing>
                         </child>
                       </object>
@@ -1319,24 +1352,6 @@ and power off the computer ?</property>
             <property name="index">1</property>
           </packing>
         </child>
-        <child type="overlay">
-          <object class="GtkBox" id="ui_box_notify">
-            <property name="visible">True</property>
-            <property name="can-focus">False</property>
-            <property name="halign">end</property>
-            <property name="valign">start</property>
-            <property name="orientation">vertical</property>
-            <child>
-              <placeholder/>
-            </child>
-            <child>
-              <placeholder/>
-            </child>
-          </object>
-          <packing>
-            <property name="index">1</property>
-          </packing>
-        </child>
       </object>
     </child>
     <style>
@@ -1383,6 +1398,40 @@ WAN IP: </property>
         <style>
           <class name="textview"/>
         </style>
+      </object>
+    </child>
+    <style>
+      <class name="popover"/>
+    </style>
+  </object>
+  <object class="GtkPopover" id="ui_popover_notify">
+    <property name="can-focus">False</property>
+    <property name="relative-to">ui_button_notify</property>
+    <child>
+      <object class="GtkScrolledWindow" id="ui_scrolled_notify">
+        <property name="visible">True</property>
+        <property name="can-focus">True</property>
+        <property name="margin-start">5</property>
+        <property name="margin-end">5</property>
+        <property name="margin-top">5</property>
+        <property name="margin-bottom">5</property>
+        <property name="hscrollbar-policy">never</property>
+        <child>
+          <object class="GtkViewport">
+            <property name="visible">True</property>
+            <property name="can-focus">False</property>
+            <child>
+              <object class="GtkBox" id="ui_box_notify">
+                <property name="visible">True</property>
+                <property name="can-focus">False</property>
+                <property name="orientation">vertical</property>
+                <child>
+                  <placeholder/>
+                </child>
+              </object>
+            </child>
+          </object>
+        </child>
       </object>
     </child>
     <style>

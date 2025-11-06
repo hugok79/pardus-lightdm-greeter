@@ -11,6 +11,9 @@ def _options_event(widget):
 def _powermenu_event(widget):
     loginwindow.o("ui_popover_powermenu").popup()
 
+def _notifymenu_event(widget):
+    loginwindow.o("ui_popover_notify").popup()
+
 
 def _network_button_event(widget):
     loginwindow.o("ui_popover_network").popup()
@@ -52,6 +55,7 @@ def module_init():
     loginwindow.o("ui_button_sleep").connect("clicked", _sleep_event)
     loginwindow.o("ui_button_poweroff").connect("clicked", _poweroff_event)
     loginwindow.o("ui_button_restart").connect("clicked", _restart_event)
+    loginwindow.o("ui_button_notify").connect("clicked", _notifymenu_event)
     loginwindow.o("ui_button_stack_poweroff_cancel").connect(
         "clicked", _cancel_event)
     loginwindow.o("ui_button_stack_restart_cancel").connect(

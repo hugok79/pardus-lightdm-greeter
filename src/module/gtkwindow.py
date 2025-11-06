@@ -182,9 +182,10 @@ class LoginWindow:
         self.o("ui_entry_new_password1").set_text("")
         self.o("ui_entry_new_password2").set_text("")
         self.o("ui_entry_password").set_text("")
-        notify_widget = self.create_notify(message)
-        self.notifies.append(notify_widget)
-        self.o("ui_button_notify").show()
+        if len(message.strip()) > 0:
+            notify_widget = self.create_notify(message)
+            self.notifies.append(notify_widget)
+            self.o("ui_button_notify").show()
         self.o("ui_box_notify").pack_start(notify_widget, False, False, 3)
         self.o("ui_box_notify").reorder_child(notify_widget, 0)
         self.o("ui_stack_login").set_visible_child_name("page_main")

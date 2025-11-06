@@ -176,6 +176,7 @@ class LoginWindow:
 
     def msg_handler(self, message=""):
         log(message)
+        message = wrap(message, 50)
         self.unblock_gui()
         self.ignore_password_cache = True
         self.o("ui_label_login_error").set_text(message)
@@ -517,10 +518,9 @@ def module_init():
     cssprovider = Gtk.CssProvider()
     style_context = Gtk.StyleContext()
     cursor = Gdk.Cursor(Gdk.CursorType.LEFT_PTR)
-    if get("fix-cursor", False, "gtkwindow"):
+    if get("fix-cursor", False, "gtkwindow") or is_virtual_machine():
         Gdk.Screen.get_root_window(screen).set_cursor(cursor)
-    else:
-        loginwindow.o("ui_window_main").get_window().set_cursor(cursor)
+    loginwindow.o("ui_window_main").get_window().set_cursor(cursor)
     style_context.add_provider_for_screen(
         screen, cssprovider, Gtk.STYLE_PROVIDER_PRIORITY_APPLICATION
     )

@@ -177,8 +177,9 @@ class LoginWindow:
         message = wrap(message, 50)
         self.unblock_gui()
         self.ignore_password_cache = True
-        self.o("ui_label_login_error").set_text(message)
-        self.o("ui_label_reset_password_error").set_text(message)
+        cur_message = self.o("ui_label_login_error").get_text()
+        self.o("ui_label_login_error").set_text("{}\n{}".format(cur_message, message))
+        self.o("ui_label_reset_password_error").set_text("{}\n{}".format(cur_message, message))
         self.o("ui_entry_new_password1").set_text("")
         self.o("ui_entry_new_password2").set_text("")
         self.o("ui_entry_password").set_text("")
@@ -319,6 +320,8 @@ class LoginWindow:
             self.o("ui_entry_username").get_text(),
             self.o("ui_entry_password").get_text()
         )
+        self.o("ui_label_login_error").set_text("")
+        self.o("ui_label_reset_password_error").set_text("")
         # start blocking gui
         self.block_gui()
         # remove username from hidden username cache

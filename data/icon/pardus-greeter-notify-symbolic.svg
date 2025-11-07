@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 64 64"
+   id="svg3197"
+   height="64"
+   width="64"
+   version="1.0"
+   sodipodi:docname="pardus-greeter-notify-symbolic.svg"
+   inkscape:version="1.4 (e7c3feb100, 2024-10-09)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1443"
+     inkscape:window-height="807"
+     id="namedview6"
+     showgrid="true"
+     inkscape:zoom="4.9166667"
+     inkscape:cx="39.864406"
+     inkscape:cy="19.220339"
+     inkscape:window-x="0"
+     inkscape:window-y="25"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg3197"
+     inkscape:showpageshadow="2"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid4483"
+       originx="0"
+       originy="0"
+       spacingy="1"
+       spacingx="1"
+       units="px" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata12">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs3199" />
+  <path
+     id="path3347"
+     d="m 32,3.434061 c -2.176075,0 -3.94013,1.7640563 -3.94013,3.9401296 v 0.038495 C 21.106767,9.207931 16.246381,15.953577 16.239482,23.134709 c 0,0 -0.0021,19.701226 -6.5412306,22.147838 -0.064831,0.0422 -0.092763,0.122301 -0.1539133,0.169307 -0.2550209,0.195352 -0.4592973,0.425314 -0.6387316,0.692604 -0.070071,0.103941 -0.151171,0.187274 -0.2077788,0.30012 -0.2010711,0.399679 -0.3386049,0.836387 -0.3386049,1.31594 0,1.637124 1.3179733,2.955097 2.9550972,2.955097 h 41.371359 c 1.637124,0 2.955098,-1.317973 2.955098,-2.955097 0,-0.479553 -0.13755,-0.916261 -0.338615,-1.31594 -0.05662,-0.112885 -0.137708,-0.196179 -0.207763,-0.30012 -0.179434,-0.267298 -0.383729,-0.49724 -0.638731,-0.692604 -0.06115,-0.04701 -0.08909,-0.127108 -0.153901,-0.169307 C 47.762563,42.835935 47.760518,23.134709 47.760518,23.134709 47.753618,15.953577 42.893232,9.207948 35.940129,7.4126683 V 7.3741903 C 35.940129,5.198117 34.176074,3.4340607 32,3.434061 Z M 24.381389,54.655745 A 7.880259,7.880259 0 0 0 32,60.565939 7.880259,7.880259 0 0 0 39.626305,54.655745 Z"
+     style="color:#bebebe;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;fill:#2f3536;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:3.94013;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1;marker:none;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+     inkscape:connector-curvature="0" />
+</svg>

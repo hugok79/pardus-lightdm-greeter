@@ -186,6 +186,7 @@ class LoginWindow:
         if len(message.strip()) > 0:
             notify_widget = self.create_notify(message)
             self.notifies.append(notify_widget)
+            self.o("ui_icon_notify").set_from_icon_name("pardus-greeter-notify-new-symbolic", 0)
             self.o("ui_button_notify").show()
         self.o("ui_box_notify").pack_start(notify_widget, False, False, 3)
         self.o("ui_box_notify").reorder_child(notify_widget, 0)

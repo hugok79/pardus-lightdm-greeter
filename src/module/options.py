@@ -12,6 +12,7 @@ def _powermenu_event(widget):
     loginwindow.o("ui_popover_powermenu").popup()
 
 def _notifymenu_event(widget):
+    loginwindow.o("ui_icon_notify").set_from_icon_name("pardus-greeter-notify-symbolic", 0)
     loginwindow.o("ui_popover_notify").popup()
 
 

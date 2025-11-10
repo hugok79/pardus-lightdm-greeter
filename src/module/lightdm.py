@@ -196,10 +196,9 @@ class lightdm_class:
                     self.__show_message(greeter, _(
                         "Failed to start session: {}").format(self.__session))
             except:
-                # Exit greeter (for reload)
-                sys.exit(0)
+                pass
             debug("Greeter done")
-            sys.exit(0)
+            Gtk.main_quit()
         else:
             # Authentication failed.
             self.__show_message(greeter, _(

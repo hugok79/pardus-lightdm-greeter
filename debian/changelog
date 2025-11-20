@@ -1,3 +1,27 @@
+pardus-lightdm-greeter (0.4.13) unstable; urgency=medium
+
+  [ Ali Riza KESKIN ]
+  * change wm start/kill method
+  * fix duplicate session issue from gnome
+  * fix visual bug for session selection
+  * fix switch to page_main for reboot/poweroff/sleep buttons
+  * minor fix
+  * reset-helper enable/disable option added
+  * msg handler event must clear password entry
+  * meg handler notify messages
+  * align messages
+  * fix lightdm message label width issue
+  * message wrap function added
+  * add notification popover instead of overlay
+  * fix log message order. New messages shown on top
+  * prevent empty message logging
+  * append new message instead of replace
+  * new notification icon added
+  * fix exit method after start_session_sync
+  * fix bilgem text align issue
+
+ -- Fatih Altun <fatih.altun@pardus.org.tr>  Thu, 20 Nov 2025 16:19:00 +0300
+
 pardus-lightdm-greeter (0.4.12) unstable; urgency=medium
 
   [ Ali Riza KESKIN ]
